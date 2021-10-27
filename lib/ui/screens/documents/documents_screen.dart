@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:select_me/api/local_signature_api.dart';
 
@@ -21,6 +22,7 @@ class _DocumentsScreenState extends State<DocumentsScreen> {
     false,
     false,
   ];
+
   @override
   Widget build(BuildContext context) {
     final Shader linearGradient = LinearGradient(
@@ -150,69 +152,93 @@ class _DocumentsScreenState extends State<DocumentsScreen> {
                         ),
                       ),
                       SizedBox(
-                        height: 16,
+                        height: 8,
                       ),
                       isSigned
                           ? Container(
-                              child: Stack(
-                              alignment: Alignment.center,
+                              child: Column(
                               children: [
-                                Row(
+                                Stack(
+                                  alignment: Alignment.center,
                                   children: [
-                                    Expanded(
-                                      child: Container(
-                                        height: 10,
-                                        decoration: BoxDecoration(
-                                          borderRadius: BorderRadius.circular(25),
-                                          color: AppColors.MONO_BLUE_DARK,
+                                    Row(
+                                      children: [
+                                        Expanded(
+                                          child: Container(
+                                            height: 10,
+                                            decoration: BoxDecoration(
+                                              borderRadius: BorderRadius.circular(25),
+                                              color: AppColors.MONO_BLUE_DARK,
+                                            ),
+                                          ),
                                         ),
-                                      ),
+                                        Expanded(
+                                          child: Container(
+                                            height: 10,
+                                            decoration: BoxDecoration(
+                                              borderRadius: BorderRadius.circular(25),
+                                              color: AppColors.MONO_GREY_DARK,
+                                            ),
+                                          ),
+                                        ),
+                                      ],
                                     ),
-                                    Expanded(
-                                      child: Container(
-                                        height: 10,
-                                        decoration: BoxDecoration(
-                                          borderRadius: BorderRadius.circular(25),
-                                          color: AppColors.MONO_GREY_DARK,
+                                    Row(
+                                      children: [
+                                        Container(
+                                          height: 25,
+                                          width: 25,
+                                          decoration: BoxDecoration(
+                                            color: AppColors.MONO_BLUE_DARK,
+                                            borderRadius: BorderRadius.circular(25),
+                                          ),
+                                          child: Icon(
+                                            Icons.check,
+                                            color: AppColors.MONO_WHITE,
+                                          ),
                                         ),
-                                      ),
+                                        Spacer(),
+                                        Container(
+                                          height: 25,
+                                          width: 25,
+                                          decoration: BoxDecoration(
+                                            color: AppColors.MONO_BLUE_DARK,
+                                            borderRadius: BorderRadius.circular(25),
+                                          ),
+                                        ),
+                                        Spacer(),
+                                        Container(
+                                          height: 25,
+                                          width: 25,
+                                          decoration: BoxDecoration(
+                                            color: AppColors.MONO_GREY_DARK,
+                                            borderRadius: BorderRadius.circular(25),
+                                          ),
+                                        ),
+                                      ],
                                     ),
                                   ],
                                 ),
                                 Row(
+                                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                   children: [
-                                    Container(
-                                      height: 25,
-                                      width: 25,
-                                      decoration: BoxDecoration(
-                                        color: AppColors.MONO_BLUE_DARK,
-                                        borderRadius: BorderRadius.circular(25),
-                                      ),
-                                      child: Icon(
-                                        Icons.check,
-                                        color: AppColors.MONO_WHITE,
-                                      ),
+                                    Text(
+                                      "Signed",
+                                      style:
+                                          TextStyle(color: AppColors.MONO_BLUE_DARK, fontSize: 12),
                                     ),
-                                    Spacer(),
-                                    Container(
-                                      height: 25,
-                                      width: 25,
-                                      decoration: BoxDecoration(
-                                        color: AppColors.MONO_BLUE_DARK,
-                                        borderRadius: BorderRadius.circular(25),
-                                      ),
+                                    Text(
+                                      "In progress",
+                                      style:
+                                          TextStyle(color: AppColors.MONO_BLUE_DARK, fontSize: 12),
                                     ),
-                                    Spacer(),
-                                    Container(
-                                      height: 25,
-                                      width: 25,
-                                      decoration: BoxDecoration(
-                                        color: AppColors.MONO_GREY_DARK,
-                                        borderRadius: BorderRadius.circular(25),
-                                      ),
+                                    Text(
+                                      "",
+                                      style:
+                                          TextStyle(color: AppColors.MONO_BLUE_DARK, fontSize: 16),
                                     ),
                                   ],
-                                ),
+                                )
                               ],
                             ))
                           : Container(
